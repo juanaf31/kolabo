@@ -85,7 +85,7 @@ function TugasCard() {
             {doneTasks.length > 0 && (
                 <Row>
                     <Typography.Title level={5}>
-                        {`Pekerjaan Selesai (${activeTasks.length})`}
+                        {`Pekerjaan Selesai (${doneTasks.length})`}
                     </Typography.Title>
                 </Row>
             )}
