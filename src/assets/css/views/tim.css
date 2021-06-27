@@ -1,0 +1,14 @@
+.tags{
+    background-color: #bcb9b5;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.done{
+    background-color: #65d393;
+}

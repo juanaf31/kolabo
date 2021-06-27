@@ -1,0 +1,15 @@
+.site-layout .site-layout-background {
+    background: #fff;
+    height: auto;
+}
+
+.container-body {
+    padding: 24px;
+    background-color: #f0f2f5;
+    min-height: 70vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
