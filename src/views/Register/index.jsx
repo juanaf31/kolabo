@@ -27,7 +27,7 @@ function Register() {
                                 Daftarkan Dirimu.
                             </h2>
                             <p>
-                                Silahkan masuk menggunakan email anda.
+                                Masukkan menggunakan email anda.
                             </p>
                         </Space>
                         <Col span={19}>

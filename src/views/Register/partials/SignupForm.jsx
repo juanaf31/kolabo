@@ -31,7 +31,7 @@ function SignupForm() {
         <Form
             name="basic"
             labelCol={{
-                span: 4,
+                span: 5,
             }}
             wrapperCol={{
                 span: 24,
@@ -72,7 +72,7 @@ function SignupForm() {
                 }}
             >
                 <Button size='large' style={{ width: '100%' }} type="primary" htmlType="submit">
-                    Submit
+                    Daftar
                 </Button>
             </Form.Item>
         </Form>

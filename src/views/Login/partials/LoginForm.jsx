@@ -20,7 +20,7 @@ function LoginForm() {
         <Form
             name="basic"
             labelCol={{
-                span: 4,
+                span: 5,
             }}
             wrapperCol={{
                 span: 24,
@@ -61,7 +61,7 @@ function LoginForm() {
                 }}
             >
                 <Button size='large' style={{ width: '100%' }} type="primary" htmlType="submit">
-                    Submit
+                    Masuk
                 </Button>
             </Form.Item>
         </Form>

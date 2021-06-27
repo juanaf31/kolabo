@@ -42,6 +42,7 @@ function Login() {
             <Row style={{ marginTop: '-25px' }} align='middle'>
                 {!xs && (
                     <Col
+                        className='hero'
                         xl={{ span: 12, offset: 3 }}
                         lg={{ span: 12, offset: 0 }}
                         md={{ span: 12, offset: 0 }}

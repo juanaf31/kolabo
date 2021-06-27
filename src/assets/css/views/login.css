@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 .img-logo{
     max-height: 250px;
     max-width: 250px;
@@ -10,6 +12,7 @@
     max-height: 100vh;
     width: auto;
 }
+
 
 .google-btn {
     cursor: pointer;
@@ -31,7 +34,6 @@
     border-radius: 2px;
     background-color: white;
   }
-
   .google-icon {
     position: absolute;
     margin-top: 11px;
@@ -47,4 +49,7 @@
     font-size: 14px;
     letter-spacing: 0.2px;
     font-family: "Roboto";
+  }
+  *{
+    font-family: 'Poppins', sans-serif;
   }
