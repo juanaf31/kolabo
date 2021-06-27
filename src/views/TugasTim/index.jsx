@@ -1,4 +1,4 @@
-import { Table, Row, Typography } from 'antd'
+import { Table, Row, Typography, Col, Avatar } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/user/userSlice'
@@ -11,9 +11,20 @@ function TugasTim() {
     const columns = [
         {
             title: '',
-            dataIndex: '',
+            dataIndex: 'user',
             width: 300,
-            align: 'center'
+            align: 'center',
+            render: (val) => {
+                console.log(val)
+                return (
+                    <Row align='middle' gutter={[12, 12]}>
+                        <Col>
+                            <Avatar shape='circle' src={val.photo} />
+                        </Col>
+                        <Col>{val.displayName}</Col>
+                    </Row>
+                )
+            }
         },
         {
             title: 'Tugas',
@@ -38,7 +49,7 @@ function TugasTim() {
 
     useEffect(() => {
         db.collection('users').where('user', '==', user.uid)
-            .onSnapshot((snapshot) => setTasks(prev => snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))));
+            .onSnapshot((snapshot) => setTasks(prev => snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, user: user }))));
     }, [])
     return (
         <div>
