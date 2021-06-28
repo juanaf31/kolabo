@@ -124,7 +124,7 @@ function DashboardLayout({ children, ...rest }) {
                                         trigger={["click"]}>
                                         <Avatar
                                             shape='circle'
-                                            src={user.photo}
+                                            src={user?.photo}
                                             style={{ cursor: 'pointer' }}
                                             size='large'
                                         />

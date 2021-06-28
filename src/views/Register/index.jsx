@@ -12,46 +12,49 @@ const { useBreakpoint } = Grid
 function Register() {
     const { xs } = useBreakpoint()
     return (
-        <div>
-            <Image preview={false} className="img-logo" src={imgLogo} alt={imgLogo} />
-            <Row style={{ marginTop: '-25px' }} align='middle'>
-
-                <Col
-                    xl={{ span: 9 }}
-                    lg={{ span: 12 }}
-                    md={{ span: 12 }}
-                    xs={{ span: 24 }}>
-                    <Row align="middle" justify='center'>
-                        <Space direction="vertical" align="center">
-                            <h2>
-                                Daftarkan Dirimu.
-                            </h2>
-                            <p>
-                                Masukkan menggunakan email anda.
-                            </p>
-                        </Space>
-                        <Col span={19}>
-                            <SignupForm />
-                        </Col>
-                    </Row>
-                </Col>
-                {!xs && (
+        <React.Fragment>
+            {!xs && (
+                <Image preview={false} className="img-logo" src={imgLogo} alt={imgLogo} />
+            )}
+            <div className='login'>
+                <Row style={{ marginTop: '-25px' }} align='middle'>
                     <Col
-                        xl={{ span: 12, offset: 3 }}
-                        lg={{ span: 12, offset: 0 }}
-                        md={{ span: 12, offset: 0 }}
-                        xs={{ span: 12 }}>
-                        <Row justify='end'>
-                            <Image
-                                className='img-hero'
-                                src={illustrationLogin}
-                                preview={false}
-                            />
+                        xl={{ span: 9 }}
+                        lg={{ span: 12 }}
+                        md={{ span: 12 }}
+                        xs={{ span: 24 }}>
+                        <Row align="middle" justify='center'>
+                            <Space direction="vertical" align="center">
+                                <h2>
+                                    Daftarkan Dirimu.
+                                </h2>
+                                <p>
+                                    Masukkan menggunakan email anda.
+                                </p>
+                            </Space>
+                            <Col span={19}>
+                                <SignupForm />
+                            </Col>
                         </Row>
                     </Col>
-                )}
-            </Row>
-        </div>
+                    {!xs && (
+                        <Col
+                            xl={{ span: 12, offset: 3 }}
+                            lg={{ span: 12, offset: 0 }}
+                            md={{ span: 12, offset: 0 }}
+                            xs={{ span: 12 }}>
+                            <Row justify='end'>
+                                <Image
+                                    className='img-hero'
+                                    src={illustrationLogin}
+                                    preview={false}
+                                />
+                            </Row>
+                        </Col>
+                    )}
+                </Row>
+            </div>
+        </React.Fragment>
     )
 }
 
