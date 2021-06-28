@@ -75,7 +75,7 @@ function Login() {
                         </Col>
                         <Col span={24}>
                             <Row justify='center'>
-                                <ButtonGoogle onClick={() => signIn()} />
+                                <ButtonGoogle title="Sign in with google" onClick={() => signIn()} />
                             </Row>
                         </Col>
                         <Space direction="vertical" align="center" style={{ marginTop: 11 }}>

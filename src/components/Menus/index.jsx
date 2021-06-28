@@ -22,7 +22,7 @@ function Menus(props) {
     ];
 
     return (
-        <Row align='middle'>
+        <Row data-testid='menus' align='middle'>
             <Menu
                 onSelect={props.onSelect}
                 theme="light"

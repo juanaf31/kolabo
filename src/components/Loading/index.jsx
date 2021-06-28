@@ -2,7 +2,7 @@ import { Spin } from 'antd';
 
 const Loading = () => {
 	return (
-		<div className="container-spinner">
+		<div data-testid='loading' className="container-spinner">
 			<Spin tip="Loading..." size="large" />
 		</div>
 	);

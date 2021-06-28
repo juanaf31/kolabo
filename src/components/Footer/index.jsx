@@ -9,7 +9,7 @@ const Footer = () => {
                 color: "white",
                 padding: "20px 50px",
             }}>
-            <Row justify="end">
+            <Row data-testid='footer' justify="end">
                 <Col>
                     <Typography style={{ color: "#FBFBFBB3" }}>
                         Kolabo

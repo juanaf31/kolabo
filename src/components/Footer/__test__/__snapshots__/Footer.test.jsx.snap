@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing footer component footer matches snapshot 1`] = `
+<footer
+  style={
+    Object {
+      "backgroundColor": "#465A6E",
+      "color": "white",
+      "padding": "20px 50px",
+    }
+  }
+>
+  <div
+    className="ant-row ant-row-end"
+    data-testid="footer"
+    style={Object {}}
+  >
+    <div
+      className="ant-col"
+      style={Object {}}
+    >
+      <article
+        className="ant-typography"
+        style={
+          Object {
+            "color": "#FBFBFBB3",
+          }
+        }
+      >
+        Kolabo
+      </article>
+      <article
+        className="ant-typography"
+        style={
+          Object {
+            "color": "#FBFBFBB3",
+          }
+        }
+      >
+        Copyright 2021 ©
+      </article>
+    </div>
+  </div>
+</footer>
+`;

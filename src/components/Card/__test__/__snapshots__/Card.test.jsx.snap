@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing card component card matches snapshot 1`] = `
+<div
+  className="ant-card ant-card-bordered"
+  data-testid="card_component"
+  style={
+    Object {
+      "borderRadius": "10px",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  />
+</div>
+`;

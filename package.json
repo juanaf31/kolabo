@@ -18,13 +18,15 @@
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.35.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test-coverage": "npm run test --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest": "26.6.0"
   }
 }
