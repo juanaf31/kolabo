@@ -7,7 +7,7 @@ function Home() {
     return (
         <div>
             <Row justify='space-around' gutter={[30, 12]}>
-                <Col span={12}>
+                <Col xs={24} md={12}>
                     <Row justify='center'>
                         <Typography.Title style={{ color: '#2d90ea' }} level={4}>Pekerjaan Hari Ini</Typography.Title>
                     </Row>
@@ -15,7 +15,7 @@ function Home() {
                         <TugasCard />
                     </Row>
                 </Col>
-                <Col span={12}>
+                <Col xs={24} md={12}>
                     <Row justify='center'>
                         <Typography.Title style={{ color: '#2d90ea' }} level={4}>Tugas Dari Kanban</Typography.Title>
                     </Row>

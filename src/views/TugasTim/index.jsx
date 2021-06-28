@@ -12,7 +12,7 @@ function TugasTim() {
         {
             title: '',
             dataIndex: 'user',
-            width: 300,
+            width: 100,
             align: 'center',
             render: (val) => {
                 console.log(val)
@@ -29,12 +29,12 @@ function TugasTim() {
         {
             title: 'Tugas',
             dataIndex: 'name',
-            width: 200,
+            width: 100,
         },
         {
             title: 'Status',
             dataIndex: 'done',
-            width: 200,
+            width: 100,
             render: (val) => val === true ? (
                 <div className='tags done'>
                     Selesai
@@ -56,7 +56,7 @@ function TugasTim() {
             <Row align='middle' justify='center'>
                 <Typography.Title style={{ color: '#2d90ea' }}>Tugas Tim Hari Ini</Typography.Title>
             </Row>
-            <Table columns={columns} showHeader pagination={false} sticky dataSource={tasks} />
+            <Table scroll={{ x: 700 }} columns={columns} showHeader pagination={false} sticky dataSource={tasks} />
         </div>
     )
 }

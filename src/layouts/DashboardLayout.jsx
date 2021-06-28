@@ -1,5 +1,5 @@
-import { Row, Col, Layout, Image, Grid, Dropdown, Menu } from 'antd'
-import React from 'react'
+import { Row, Col, Layout, Image, Grid, Dropdown, Menu, Button, Drawer } from 'antd'
+import React, { useState } from 'react'
 import imgLogo from '../assets/img/logo.png'
 import { auth } from '../utils/firebase'
 import * as Icon from 'react-feather'
@@ -11,11 +11,26 @@ import menuRouter from '../routers/routes'
 import Menus from '../components/Menus'
 import Footer from '../components/Footer'
 import '../assets/css/layouts/dashboard.css'
+import Avatar from 'antd/lib/avatar/avatar'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../features/user/userSlice'
+import burger from '../assets/img/burger.png'
 
 const { Header, Sider, Content } = Layout
-const { xs } = Grid
-
+const { useBreakpoint } = Grid
 function DashboardLayout({ children, ...rest }) {
+    const { xs } = useBreakpoint()
+    const user = useSelector(selectUser)
+    const [collapse, setCollapse] = useState(false);
+    const [visible, setVisible] = useState(false);
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+    const onClose = () => {
+        setCollapse(false);
+        setVisible(false);
+    };
 
     const menu = (
         <Menu>
@@ -37,42 +52,81 @@ function DashboardLayout({ children, ...rest }) {
 
     return (
         <Layout {...rest} className="container">
-            <Sider
-                trigger={null}
-                style={{
-                    backgroundColor: "white",
-                    minWidth: "none",
-                    maxWidth: "none",
-                    flex: "0 0 230px",
-                    width: 0,
-                    minHeight: '100vh'
-                }}
-                collapsible>
-                <Row justify='center'>
-                    <Image
-                        preview={false}
-                        src={imgLogo}
-                        width={80}
-                        className="logo"
-                    />
-                </Row>
-                <Menus style={{ marginTop: '5vh' }} />
-            </Sider>
+            {!xs && (
+                <Sider
+                    trigger={null}
+                    style={{
+                        backgroundColor: "white",
+                        minWidth: "none",
+                        maxWidth: "none",
+                        flex: "0 0 230px",
+                        width: 0,
+                        minHeight: '100vh'
+                    }}
+                    collapsible
+                    collapsed={xs ? true : collapse}>
+                    <Row justify='center'>
+                        <Image
+                            preview={false}
+                            src={imgLogo}
+                            width={80}
+                            className="logo"
+                        />
+                    </Row>
+                    <Menus collapse={collapse} />
+                </Sider>
+            )}
             <Layout className="site-layout">
                 <Header
                     className="site-layout-background"
                     style={{ padding: '5px 15px' }}>
-                    <Row justify="space-between" align="middle">
-                        <Col span={24}>
+                    <Row justify={xs ? "space-between" : "end"} align="middle">
+                        {xs && (
+                            <Col
+                                style={{
+                                    display: "flex",
+                                    padding: "14px 10px",
+                                }}>
+                                <Row align="middle" gutter={[12, 0]}>
+                                    <Col>
+                                        <Row align='middle' onClick={showDrawer}>
+                                            <Image src={burger} width={30} preview={false} />
+                                        </Row>
+                                    </Col>
+                                    <Col
+                                        style={{
+                                            height: 40,
+                                            paddingTop: "2px",
+                                        }}>
+                                        <Image
+                                            preview={false}
+                                            src={imgLogo}
+                                            width={40}
+                                            height={40}
+                                        />
+                                    </Col>
+                                </Row>
+                                <Drawer
+                                    title="Menu"
+                                    placement="left"
+                                    cloable={false}
+                                    onClose={onClose}
+                                    visible={visible}>
+                                    <Menus onSelect={onClose} />
+                                </Drawer>
+                            </Col>
+                        )}
+                        <Col>
                             <Row justify="end" align="middle">
                                 <Col>
                                     <Dropdown
                                         overlay={menu}
                                         trigger={["click"]}>
-                                        <Icon.Settings
+                                        <Avatar
+                                            shape='circle'
+                                            src={user.photo}
                                             style={{ cursor: 'pointer' }}
-                                            size={!xs ? 24 : 20}
-                                            color="#6e6b7b"
+                                            size='large'
                                         />
                                     </Dropdown>
                                 </Col>
